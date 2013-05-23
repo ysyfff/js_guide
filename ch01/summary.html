@@ -5,5 +5,18 @@ a.push(1,2,3);
 document.write(a+'<br/>');
 
 a.reverse();
-document.write(a);
+document.write(a+'<br/>');
+
+
+function Point(x, y){
+    this.x = x;
+    this.y = y;
+}
+var p = new Point(1,1);
+Point.prototype.r = function(){
+    return Math.sqrt(
+        this.x*this.x+
+        this.y*this.y);
+};
+document.write(p.r()+'<br/>');
 </script>
