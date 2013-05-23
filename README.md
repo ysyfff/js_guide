@@ -2,7 +2,7 @@ js_guide
 ========
 作者
 --------
-作者：ysyfff(JChen)
+作者：ysyfff(JChen)<br/>
 日期：2013-5-23
 
 书
