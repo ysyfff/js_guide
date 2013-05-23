@@ -2,7 +2,18 @@
 <html>
 <head>
 <style>
-
+.output{
+    font-weight: bold;
+}
+#payment{
+    text-decoration: underline;
+}
+#graph{
+    border: solid 1px black;
+}
+th, td{
+    vertical-align: top;
+}
 </style>
 </head>
 <body>
@@ -38,7 +49,7 @@
     </tr>
 
     <tr><td>Total interest:</td>
-        <td>$<span class="output" id="interest"></span></td>
+        <td>$<span class="output" id="totalinterest"></span></td>
     </tr>
 
     <tr><td>Monthly payment:</td>
@@ -50,5 +61,29 @@
         <div id="lenders"></div></td>
     </tr>
 </table>
+
+<script>
+"use strict";
+function calculate(){
+    var amount = document.getElementById("amount");
+    var apr = document.getElementById("apr");
+    var years = document.getElementById("years");
+    var zipcode = document.getElementById("zipcode");
+    var payment = document.getElementById("payment");
+    var total = document.getElementById("total");
+    var totalinterest = document.getElementById("totalinterest");
+
+    var principal = parseFloat(amount.value);
+    var interest = parseFloat(apr.value) / 100 / 12;
+    var Payments = parseFloat(years.value);
+
+    var x = Math.pow(1 + interest, Payments);
+    var monthly = (principal * x * interest) / (x - 1);
+
+    if(isFinite(monthly)){
+        
+    }
+}
+</script>
 </body>
 </html>
