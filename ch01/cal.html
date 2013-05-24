@@ -75,13 +75,15 @@ function calculate(){
 
     var principal = parseFloat(amount.value);
     var interest = parseFloat(apr.value) / 100 / 12;
-    var Payments = parseFloat(years.value);
+    var payments = parseFloat(years.value);
 
     var x = Math.pow(1 + interest, Payments);
     var monthly = (principal * x * interest) / (x - 1);
 
     if(isFinite(monthly)){
         payment.innerHtml = monthly.toFixed(2);
+        total.innerHtml = (monthly * payments).toFixed(2);
+        totalinterest.innerHtml = (monthly * payments) - principal).toFixed(2);
     }
 }
 </script>
