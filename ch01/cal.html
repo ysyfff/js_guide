@@ -83,7 +83,11 @@ function calculate(){
     if(isFinite(monthly)){
         payment.innerHtml = monthly.toFixed(2);
         total.innerHtml = (monthly * payments).toFixed(2);
-        totalinterest.innerHtml = (monthly * payments) - principal).toFixed(2);
+        totalinterest.innerHtml = ((monthly * payments) - principal).toFixed(2);
+
+        save(amount.value, apr.value, years.value, zipcode.value);
+
+        
     }
 }
 </script>
