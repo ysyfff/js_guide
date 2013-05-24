@@ -71,6 +71,15 @@ Object.defineProperty(o, "x", {writable:false});
 o.x = 32;
 print(o.x);
 
+function classof(o){
+    if(o===null) return "Null";
+    if(o===undefined) return "Undefined";
+    return Object.prototype.toString.call(o).slice(8, -1);
+}
+print(classof(1));
+print(classof({}));
+print(classof([]));
+
 var len = book && book.subtitle && book.subtitle.length;
 
 delete book.author;
