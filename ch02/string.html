@@ -41,4 +41,14 @@ con.push(a, b, c);
 for(var i=0; i<con.length; i++){
     document.write(typeof(con[i])+'<br/>');
 }
+
+var n = 19;
+var a = n.toString(2);
+var b = "o" + n.toString(8);
+var c = "ox" + n.toString(16);
+var con = []
+con.push(a, b, c);
+for(var i=0; i<con.length; i++){
+    document.write(con[i]+'<br/>');
+}
 </script>
