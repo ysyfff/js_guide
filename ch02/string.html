@@ -1,0 +1,29 @@
+<script>
+var s = "hello world!";
+
+var a = s.charAt(s.length - 1);
+
+var b = s.substring(1, 4);
+
+var c = s.slice(1, 4);
+
+var d = s.slice(-3);
+
+var e = s.indexOf('l');
+
+var f = s.lastIndexOf('l');
+
+var g = s.indexOf('l', 3);
+
+var h = s.split(",");
+
+var i = s.replace("h", "H");
+
+var j = s.toUpperCase();
+
+var con = [];
+con.push(s, a, b, c, d, e, f, g, h, i, j);
+for(var i=0; i<con.length; i++){
+    document.write(con[i]+'<br/>');
+}
+</script>
