@@ -81,7 +81,7 @@ function calculate(){
     var monthly = (principal * x * interest) / (x - 1);
 
     if(isFinite(monthly)){
-        
+        payment.innerHtml = monthly.toFixed(2);
     }
 }
 </script>
