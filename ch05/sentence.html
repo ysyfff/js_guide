@@ -16,5 +16,18 @@ mainloop: while(token++ != 10){
     continue mainloop;
 }
 
+function f(x){
+    if(x<0) throw new Error("x can not be < 0");
+}
+/*f(-10);*/
 
+try{
+    var n = Number(prompt("Please input an integer:", ""));
+    if(!isFinite(n)) throw new Error("Wo Cao");
+    var r = n*n;
+    alert(r);
+}
+catch(fuck){
+    alert(fuck);
+}
 </script>
