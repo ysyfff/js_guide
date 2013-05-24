@@ -68,4 +68,15 @@ function print(con){
     document.write(con[i]+'<br/>');
     }
 }
+
+
+
+var scope = "global";
+function func(){
+    document.write(scope+"<br/>");
+    var scope = "local";
+    document.write(scope+"<br/>");
+}
+
+func();
 </script>
