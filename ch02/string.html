@@ -23,9 +23,7 @@ var j = s.toUpperCase();
 
 var con = [];
 con.push(s, a, b, c, d, e, f, g, h, i, j);
-for(var i=0; i<con.length; i++){
-    document.write(con[i]+'<br/>');
-}
+print(con);
 
 var s = "test";
 s.len = 4;
@@ -38,9 +36,7 @@ var b = +x;
 var c = !!x;
 var con = []
 con.push(a, b, c);
-for(var i=0; i<con.length; i++){
-    document.write(typeof(con[i])+'<br/>');
-}
+print(con);
 
 var n = 19;
 var a = n.toString(2);
@@ -48,7 +44,21 @@ var b = "o" + n.toString(8);
 var c = "ox" + n.toString(16);
 var con = []
 con.push(a, b, c);
-for(var i=0; i<con.length; i++){
+print(con)
+
+var n = 123456.789;
+var a = n.toFixed(2);
+var b = n.toExponential(2);
+var c = n.toPrecision(2);
+var con = []
+con.push(a, b, c);
+print(con);
+
+
+
+function print(con){
+    for(var i=0; i<con.length; i++){
     document.write(con[i]+'<br/>');
+    }
 }
 </script>
