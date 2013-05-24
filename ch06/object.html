@@ -16,4 +16,24 @@ function GuanLian(){
     }
 }
 GuanLian();
+
+function inherit(p){
+    if(p==null) throw TypeError();
+    if(Object.create){
+        return Object.create(p);
+    }
+    var t;
+    typeof p;
+    if(t !== "object" && t!=="function") throw TypeError();
+    function f(){}
+    f.prototype = p;
+    return new f();
+}
+var father = {r:1};
+var child = inherit(father);
+child.x = 1; 
+child.y = 2;
+child.r = 3;
+print("father"); print(father.r);
+print("child"); print(child.r);
 </script>
