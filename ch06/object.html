@@ -58,6 +58,19 @@ q.x = 1, q.y = 1;
 print(q.r);
 print(q.theta);
 
+var o = {};
+Object.defineProperty(o, "x", {
+    value:1,
+    writable:true,
+    enumerable:false,
+    cofigurable:true})
+print(o.x)
+o.x = 2;
+print(o.x);
+Object.defineProperty(o, "x", {writable:false});
+o.x = 32;
+print(o.x);
+
 var len = book && book.subtitle && book.subtitle.length;
 
 delete book.author;
