@@ -1,0 +1,82 @@
+<script>
+var s = "hello world!";
+
+var a = s.charAt(s.length - 1);
+
+var b = s.substring(1, 4);
+
+var c = s.slice(1, 4);
+
+var d = s.slice(-3);
+
+var e = s.indexOf('l');
+
+var f = s.lastIndexOf('l');
+
+var g = s.indexOf('l', 3);
+
+var h = s.split(",");
+
+var i = s.replace("h", "H");
+
+var j = s.toUpperCase();
+
+var con = [];
+con.push(s, a, b, c, d, e, f, g, h, i, j);
+print(con);
+
+var s = "test";
+s.len = 4;
+var t = s.len;
+document.write(t+"<br/>");
+
+var x = 45643;
+var a = x + "";
+var b = +x;
+var c = !!x;
+var con = []
+con.push(a, b, c);
+print(con);
+
+var n = 19;
+var a = n.toString(2);
+var b = "o" + n.toString(8);
+var c = "ox" + n.toString(16);
+var con = []
+con.push(a, b, c);
+print(con)
+
+var n = 123456.789;
+var a = n.toFixed(2);
+var b = n.toExponential(2);
+var c = n.toPrecision(2);
+var con = []
+con.push(a, b, c);
+print(con);
+
+var a = parseInt("3 is a number");
+var b = parseFloat("3.14 is a number too");
+var c = parseInt("0xFF");
+var d = parseInt(".1");
+var e = parseFloat("$89");
+con = [];
+con.push(a, b, c, d, e);
+print(con);
+
+function print(con){
+    for(var i=0; i<con.length; i++){
+    document.write(con[i]+'<br/>');
+    }
+}
+
+
+
+var scope = "global";
+function func(){
+    document.write(scope+"<br/>");
+    var scope = "local";
+    document.write(scope+"<br/>");
+}
+
+func();
+</script>
