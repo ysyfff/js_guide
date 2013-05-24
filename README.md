@@ -2,15 +2,15 @@ js_guide
 ========
 作者
 --------
-作者：ysyfff(JChen)
+作者：ysyfff(JChen)<br/>
 日期：2013-5-23
 
 书
 --------
-《JavaScript》权威指南
-淘宝前端团队译
+《JavaScript》权威指南<br/>
+淘宝前端团队译<br/>
 机械工业出版社
 
 章节
 --------
-ch01------>JS概述
+ch01------>JS概述<br/>
