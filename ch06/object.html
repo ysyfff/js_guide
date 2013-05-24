@@ -3,6 +3,17 @@ var empty = {};
 var o = new Object();
 
 var obj = {x:1, y:2};
-document.write( obj.x +"<br/>");
-document.write( obj["x"] +"<br/>");
+print(obj.x);
+print(obj["x"]);
+function print(x){
+    document.write(x + "<br/>");
+}
+function GuanLian(){
+    var n = prompt("Please enter a name:", "");
+    obj[n] = 35;
+    for(k in obj){
+        print(k);
+    }
+}
+GuanLian();
 </script>
