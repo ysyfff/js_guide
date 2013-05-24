@@ -30,5 +30,15 @@ for(var i=0; i<con.length; i++){
 var s = "test";
 s.len = 4;
 var t = s.len;
-document.write(t);
+document.write(t+"<br/>");
+
+var x = 45643;
+var a = x + "";
+var b = +x;
+var c = !!x;
+var con = []
+con.push(a, b, c);
+for(var i=0; i<con.length; i++){
+    document.write(typeof(con[i])+'<br/>');
+}
 </script>
