@@ -54,7 +54,14 @@ var con = []
 con.push(a, b, c);
 print(con);
 
-
+var a = parseInt("3 is a number");
+var b = parseFloat("3.14 is a number too");
+var c = parseInt("0xFF");
+var d = parseInt(".1");
+var e = parseFloat("$89");
+con = [];
+con.push(a, b, c, d, e);
+print(con);
 
 function print(con){
     for(var i=0; i<con.length; i++){
