@@ -1,3 +1,12 @@
 <script>
+var a=[];
 for(var i=0; i<100; a[i++]=0);
+
+var o = {x:6, y:2, z:3};
+var a=[], i=0;
+for(a[i++] in o);
+
+for(i in a){
+    document.write(a[i]+"<br/>");
+} 
 </script>
