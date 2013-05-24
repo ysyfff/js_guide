@@ -136,7 +136,18 @@ function getLenders(){
     req.open("GET", url);
     req.send(null);
 
-    
+    req.onreadystatechange = function(){
+        if(req.readyState == 4 && req.status == 200){
+            var response = req.responseText;
+            var lenders = JSON.parse(response);
+
+            var list = "";
+            for(var i=0; i<lenders.length; i++){
+                list += "<li><a href='"+lenders[i].url+"'>" + lenders[i].name +"</a>";
+            }
+            ad.innerHtml = "<ul>" + list +"</ul>";
+        }
+    }
 }
 </script>
 </body>
