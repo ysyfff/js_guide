@@ -9,4 +9,12 @@ for(a[i++] in o);
 for(i in a){
     document.write(a[i]+"<br/>");
 } 
+
+var token = 0;
+mainloop: while(token++ != 10){
+    if(token==5) break;
+    continue mainloop;
+}
+
+
 </script>
