@@ -149,6 +149,13 @@ function getLenders(){
         }
     }
 }
+
+function chart(principal, interest, monthly, payments){
+    var graph = document.getElementById("graph");
+    graph.width = graph.width;//claer and reset HUA BU
+
+    if(arguments.length == 0 || !graph.getContext) return;
+}
 </script>
 </body>
 </html>
