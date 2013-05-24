@@ -160,7 +160,25 @@ function chart(principal, interest, monthly, payments){
     Returns an object that provides methods and properties for drawing and manipulating images and graphics on a canvas element in a document.
     */
 
+    var g = graph.getContext("2d");
+    var width = graph.width;
+    var height = graph.height;
     
+    function paymentToX(n){
+        return n*width / payments;
+    }
+    function amountToY(a){
+        return height-(a*height / (monthly*payments*1.05));
+    }
+
+    g.moveTo(paymentToX(0), amountToY(0));
+    g.lineTo(paymentToX(payments), amountToY(monthly * payments));
+    g.lineTo(paymentToX(payments), amountToY(0));
+    g.closePath();
+    g.fillStyle = "#f88";
+    g.fill();
+    g.font = "bold 12px sans-serif";
+    g.fillText("Total Inerest Payments", 20, 20);
 }
 </script>
 </body>
