@@ -80,6 +80,12 @@ print(classof(1));
 print(classof({}));
 print(classof([]));
 
+o = {x:1, y:{z:[false, null, ""]}};
+s = JSON.stringify(o);
+print(classof(s)); //this is a string
+p = JSON.parse(s);
+print(p);
+
 var len = book && book.subtitle && book.subtitle.length;
 
 delete book.author;
