@@ -89,7 +89,12 @@ print3();
 printA(a.splice(2,0, 'a', 'b'));
 print3();
 printA(a);
+print3();
 printA(a.map(function(x){
     return x*2;
+}))
+print3();
+printA(a.filter(function(x){
+    return isFinite(x);
 }))
 </script>
