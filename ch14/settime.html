@@ -28,9 +28,15 @@ function clock2(){
 <body onload="clock();">
 <div id="clocks"></div>
 <div id="clocks2"></div>
+<iframe src="http://www.baidu.com"></iframe>
 <script>
 setInterval('clock2()', 500);
 setTimeout('location="http://www.baidu.com"', 5000);
+var w = window.open();
+alert(w);
+w.alert("hah");
+w.location="http://www.baidu.com/";
+w.close();
 do{
     var name = prompt("What is your name?"+"\n");
     var correct = confirm("You entered'"+name+"'.\n"+"Click okay or to proceed or Cancel to re-enter.");
