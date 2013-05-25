@@ -8,6 +8,11 @@ function print2(r, c, x){
 function print3(){
     document.write("<br/>");
 }
+function printA(a){
+    for(var i=0; i<a.length; i++){
+        document.write(a[i]+"<br/>");       
+    }
+}
 var a = new Array(5);
 a[100] = 5;
 print(a[99]);
@@ -62,4 +67,9 @@ for(var col=1; col<table.length; col++){
 }
 
 print(table[5][6]);
+
+
+var b = new Array(10);
+var c = b.join('*');
+printA(c);
 </script>
