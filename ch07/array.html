@@ -2,6 +2,12 @@
 function print(x){
     document.write(x+"<br/>");
 }
+function print2(r, c, x){
+    document.write(r + "x" + c + "=" + x + " ");   
+}
+function print3(){
+    document.write("<br/>");
+}
 var a = new Array(5);
 a[100] = 5;
 print(a[99]);
@@ -32,4 +38,28 @@ print(a.shift());
 for(var i=0; i<a.length; i++){
     if(!(i in a)) continue;
 }
+
+var data = [1,2,3,4,5];
+var sum = 0;
+data.forEach(function(x){
+    print(x);
+    sum += x*x;
+});
+print(sum);
+
+var table = new Array(10);
+for(var i=0; i<table.length; i++){
+    table[i] = new Array(10);
+}
+var len = 2;
+for(var col=1; col<table.length; col++){
+    for(var row=1; row<len; row++){
+        table[row][col]=row*col;
+        print2(row, col, table[row][col]);
+    }
+    len++;
+    print3();
+}
+
+print(table[5][6]);
 </script>
