@@ -51,4 +51,7 @@ function easyCopy(args){
 }
 var a = [1,2,3], b=[];
 easyCopy({from:a, to:b, length:4});
+
+var a = [function(x) {return x*x;}, 21];
+print(a[0](a[1]));
 </script>
