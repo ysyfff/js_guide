@@ -1,0 +1,34 @@
+<html>
+<head>
+<script>
+function print(x){
+    document.write(x+"<br/>");
+}
+
+function clock(){
+    var dt = new Date();
+    hour = dt.getHours();
+    min = dt.getMinutes();
+    sec = dt.getSeconds();
+    var now = hour+":"+min+":"+sec;
+    document.getElementById("clocks").innerHTML = now;
+    setTimeout('clock()', 500);
+}
+function clock2(){
+    var dt = new Date();
+    hour = dt.getHours();
+    min = dt.getMinutes();
+    sec = dt.getSeconds();
+    var now = hour+":"+min+":"+sec;
+    document.getElementById("clocks2").innerHTML = now;   
+}
+
+</script>
+</head>
+<body onload="clock();">
+<div id="clocks"></div>
+<div id="clocks2"></div>
+<script>
+setInterval('clock2()', 500);
+</script>
+</body>
