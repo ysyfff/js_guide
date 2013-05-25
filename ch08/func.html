@@ -16,4 +16,13 @@ var o = {
     }
 }
 o.m();
+
+function getPro(o, a){
+    a = a || [];
+    for(var p in o) a.push(p);
+    return a;
+}
+var p=[];
+var a = getPro(o);
+getPro(p, a);
 </script>
