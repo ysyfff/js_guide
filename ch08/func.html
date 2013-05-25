@@ -125,7 +125,19 @@ function setupHelp() {
   }
 }
 
+function f(y) {return this.x+y;}
+var o={x:1};
+var g=f.bind(o);
+print(g(2)+"ok");
 
+function bind(f, o){
+    if(f.bind) return f.bind(o);
+    else return function(){
+      return f.apply(o, arguments);
+    } 
+}
+gg = bind(f, o);
+print(gg(3));
 
 </script>
 </head>
