@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script>
+function print(x){
+    document.write(x+"<br/>");
+}
+
+function Complex(real, imag){
+    if(isNaN(real) || isNaN(imag)){
+        throw new TypeError();
+    }
+    this.r = real;
+    this.i = imag;
+}
+Complex.prototype.add = function(that){
+  return new Complex(this.r + that.r, this.i + that.i);
+}
+var c = new Complex(2,3);
+var d = new Complex(c.i, c.r);
+print(c.r +"+"+ c.i+"i");
+print(d.r +"+"+ d.i+"i");
+var e = c.add(d);
+print(e.r +"+"+ e.i+"i");
+</script>
+</head>
+<body>
+</body>
+</html>
+
