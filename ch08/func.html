@@ -1,0 +1,19 @@
+<script>
+function print(x){
+    document.write(x+"<br/>");
+}
+
+var o = {
+    m:function(){
+        var self = this;
+        print(this===o);
+        f();
+
+        function f(){
+            print(this===o);
+            print(self===o);
+        }
+    }
+}
+o.m();
+</script>
