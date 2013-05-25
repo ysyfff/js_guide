@@ -75,4 +75,7 @@ var a = [1,2,3, 7,5];
 printA(b.join("*"));
 printA(a.reverse());
 printA(a.sort());
+printA(a.sort(function(a, b){
+    return b - a;
+}));
 </script>
