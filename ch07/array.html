@@ -26,4 +26,10 @@ a.unshift(2);
 for(var i=0; i<a.length; i++){
     print(a[i]);
 }
+print(a.pop());
+print(a.shift());
+
+for(var i=0; i<a.length; i++){
+    if(!(i in a)) continue;
+}
 </script>
