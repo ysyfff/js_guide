@@ -67,4 +67,12 @@ var extend = (function(){
 }());
 
 print(extend());
+
+var scope = "globle";
+function check(){
+    var scope = "local";
+    function f(){return scope;}
+    return f;
+}
+print(check()());
 </script>
