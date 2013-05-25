@@ -75,4 +75,12 @@ function check(){
     return f;
 }
 print(check()());
+
+var conter = (function(){
+    var c = 0;
+    return function() {return c++;};
+}());
+print(conter());
+print(conter());
+print(conter());
 </script>
