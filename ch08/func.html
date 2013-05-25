@@ -54,4 +54,17 @@ easyCopy({from:a, to:b, length:4});
 
 var a = [function(x) {return x*x;}, 21];
 print(a[0](a[1]));
+
+var extend = (function(){
+    for(var p in {toString:null}){
+        return function extend(o){
+            return 0;
+        }
+    }
+    return function patched_extend(o){
+        return 1;
+    }
+}());
+
+print(extend());
 </script>
