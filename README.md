@@ -72,7 +72,15 @@ ch14------>Window对象<br/>
 ###ch13:
     在第二部分中会介绍大量的脚本宿主对象，这些对象可以表示浏览器窗口、文档树和文档的内容等。
     
+    Window对象是所有客户端JS特性和API的主要接入点。它表示浏览器的一个窗口或者窗体，并且可以用
+    window标识符来引用它。
+    
     在客户端JS中，Window对象也是全局对象。这意味着Window对象处于作用域的顶端，他的属性和方法
     也是全局变量和全局函数。
+    
+    ###好吧，我就明说了吧，Window对象是属于JS的，它有一些属性比如引用了Location对象的location属性，
+    另外，还有open、close、alert、confirm、prompt、setTimeout、clearTimeout、setInterval、learInterval、
+    oveBy、resizeBy、scrollB等等的方法。然而，最重要的属性就是它用了Document对象的document属性，
+    这个属性恰恰就是HTML的API，也就是JS和HTML与CSS的接口。
 
     
