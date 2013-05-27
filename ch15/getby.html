@@ -1,22 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+<body>
+<form  name="shipping_address"></form>
+<span class="sparkline" data-ymin="0" data-ymax="10"></span>
+<p classs="oo"><span>aa</span>oo</p>
+<div id="log"></div>
+<image src=""></image>
+
+
 <script>
 var section1 = document.getElementById('section1');
 var radio = document.getElementsByName("favorate_color");
-var fisrtp = document.getElementsByTagName('p')[0];
-var fpspan = fisrtp.getElementsByTagName('span');
+var firstp = document.getElementsByTagName('p')[0];
+var fpspan = firstp.getElementsByTagName('span');
 var form1 = document.shipping_address;
 var form1_1 = document.forms.shipping_address;
-var log = getElementById("log");
+var log = document.getElementById("log");
+
 var fatal = log.getElementsByClassName("fatal error");
 
 var f = document.forms[0];
-f.action = "www.baidu.com";
+f.action = "http://www.baidu.com";
 f.method = "post";
 
 var image = document.images[0];
 var width = parseInt(image.getAttribute("WIDTH"));
 image.setAttribute("class", "thumbnail");
 
-<span class="sparkline" data-ymin="0" data-ymax="10"></span>
+
+
 /*
 p[lang="fr"]
 *[name="x"]
@@ -41,4 +56,5 @@ document.firstChild.firstChild.nextSibling
 Document、Element和Text是Node的子类。
 */
 </script>
-<form name="shipping_address"></form>
+</body>
+</html>
