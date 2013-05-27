@@ -1,4 +1,9 @@
 <p>hahah <span>woqu</span></p>
+<form id="shipping">
+    MALE:<input type="radio" name="sex" value="MALE"/><br/>
+    FEMALE:<input type="radio" name="sex" value="FEMALE"/><br/>
+    POST:FEMALE:<input type="radio" name="method" value="FEMALE"/><br/>
+</form>
 
 <script>
 function getScroollOffset(w){
@@ -33,4 +38,6 @@ var e = document.getElementsByTagName('p')[0];
 var ee = e.getElementsByTagName('span')[0];
 var box = ee.getBoundingClientRect();
 console.log(box); 
+
+console.log(document.querySelectorAll('#shipping input[type="radio"][name="method"]'));
 </script>
