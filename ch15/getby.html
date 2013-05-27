@@ -31,9 +31,9 @@ var width = parseInt(image.getAttribute("WIDTH"));
 image.setAttribute("class", "thumbnail");
 
 var para = document.getElementsByTagName("p")[0];
-var text = para.textContent;
+/*var text = para.textContent;
 para.textContent="oooooooooooooooooooooooooooooooo";
-console.log(text);
+console.log(text);*/
 
 function textContent(element, value){
     var content = element.textContent;
@@ -51,6 +51,7 @@ function upcase(n){
         }
     }
 }
+upcase(para);
 /*
 p[lang="fr"]
 *[name="x"]
