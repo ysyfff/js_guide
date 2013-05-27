@@ -6,7 +6,7 @@
 <body>
 <form  name="shipping_address"></form>
 <span class="sparkline" data-ymin="0" data-ymax="10"></span>
-<p classs="oo"><span>aa</span>oo</p>
+<p class="oo"><span>aa</span>oo</p>
 <div id="log"></div>
 <image src=""></image>
 
@@ -52,6 +52,11 @@ function upcase(n){
     }
 }
 upcase(para);
+
+var pp = para.cloneNode();
+pp.textContent="nonon!!";
+console.log(pp);
+para.appendChild(pp);
 
 function loadasync(url){
     var head = document.getElementsByTagName("head")[0];
