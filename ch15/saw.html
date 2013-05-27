@@ -1,3 +1,5 @@
+<p>hahah <span>woqu</span></p>
+
 <script>
 function getScroollOffset(w){
     w = w || window;
@@ -27,4 +29,8 @@ function getViewportSize(w){
     return {x:d.body.clientWidth, y:d.body.clientHeight};
 }
 console.log(getViewportSize());
+var e = document.getElementsByTagName('p')[0];
+var ee = e.getElementsByTagName('span')[0];
+var box = ee.getBoundingClientRect();
+console.log(box); 
 </script>
