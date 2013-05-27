@@ -12,7 +12,7 @@ div{
     background-color: #888;
     text-shadow: 3px 3px 1px #fff;
     padding: 12px;
-    opacity: .75; /*css3*/
+    opacity: .95; /*css3*/
     filter:alpha(opacity=75);/*for IE*/
 }
 .up{
@@ -58,5 +58,27 @@ function shake(e, oncomplete, dis, time){
         }
     }
 }
-shake("shake", "",5, 500);
+window.onload=shake("shake", fadeOut,5, 500);
+function fadeOut(e, oncomplete, time){
+    if(typeof(e)==="string") e = document.getElementById(e);
+    if(!time) time = 500;
+    var ease = Math.sqrt;
+
+    var start = (new Date()).getTime();
+    animate();
+
+    function animate(){
+        var elapsed = (new Date()).getTime()-start;
+        var fraction = elapsed/time;
+
+        if(fraction<1){
+            var opacity = 1 - ease(fraction);
+            e.style.opacity = String(opacity);
+            setTimeout(animate, Math.min(25, time-elapsed));
+        }else{
+            e.style.opacity = "0";
+            if(oncomplete) oncomplete(e);
+        }
+    }
+}
 </script>
