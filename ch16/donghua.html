@@ -1,0 +1,62 @@
+<style>
+.radius10{
+    border-radius: 20px; /*for now*/
+    -moz-border-radius:10px; /*for FF*/
+    -webkit-border-radius:30px; /*for chrome*/
+}
+div{
+    position: absolute;
+    top:0px;
+    width: 500px;
+    height: 50px;
+    background-color: #888;
+    text-shadow: 3px 3px 1px #fff;
+    padding: 12px;
+    opacity: .75; /*css3*/
+    filter:alpha(opacity=75);/*for IE*/
+}
+.up{
+    position: absolute;
+    padding: 12px;
+    left:20px;
+    top:40px;
+}
+#shake{
+    position: relative;
+    top:80px;
+}
+</style>
+<div class="radius10">down
+</div>
+<div class="radius10 up">up</div>
+<div id="shake" class="radius10">qu</div>
+<script>
+
+function shake(e, oncomplete, dis, time){
+    if(typeof(e) === "string") e = document.getElementById(e);
+    if(!time) time = 500;
+    if(!dis) dis = 5;
+
+    var originalStyle = e.style.cssText;
+    e.style.position = "relative";
+    var start = (new Date()).getTime();
+    animate();
+
+    function animate(){
+        var now = (new Date()).getTime();
+        var elapsed = now -start;
+        var fraction = elapsed/time;
+
+        if(fraction < 1){
+            var x = dis * Math.sin(fraction*4*Math.PI);
+            e.style.top=x+"px";
+
+            setTimeout(animate, Math.min(25, time-elapsed));
+        }else{
+            e.style.cssText = originalStyle;
+            if(oncomplete) oncomplete(e);
+        }
+    }
+}
+shake("shake", "",5, 500);
+</script>
