@@ -96,15 +96,16 @@ function sortrows(table, n, compatator){
     }
 }
 
+function dy_sort(table, n){
+    return function(){
+        sortrows(table, n);
+    }
+}
+
 function makeSortable(table){
     var header = table.getElementsByTagName('th');
     for(var i=0; i<header.length; i++){
-        console.log("hhh");
-        (header[i].onclick = function(n){
-            console.log(n);
-            console.log("aaa");
-            sortrows(table, n);
-        }(i));
+        header[i].onclick = dy_sort(table, i);
     }
 }
 console.log(document.getElementsByTagName('table'));
