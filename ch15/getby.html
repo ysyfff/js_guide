@@ -102,6 +102,18 @@ function dy_sort(table, n){
     }
 }
 
+/*function makeSortable(table){
+     var header = table.getElementsByTagName('th');
+     for(var i=0; i<header.length; i++){
+         console.log("hhh");
+         (header[i].onclick = function(n){
+             console.log(n);
+             console.log("aaa");
+             sortrows(table, n);
+        }(i));
+     }
+ }
+*/
 function makeSortable(table){
     var header = table.getElementsByTagName('th');
     for(var i=0; i<header.length; i++){
@@ -110,6 +122,15 @@ function makeSortable(table){
 }
 console.log(document.getElementsByTagName('table'));
 makeSortable(document.getElementsByTagName('table')[0]);
+
+function reverse(n){
+    var f = document.createDocumentFragment();
+    while(n.lastChild){
+        f.appendChild(n.lastChild);
+    }
+    n.appendChild(f);
+}
+reverse(para);
 /*
 p[lang="fr"]
 *[name="x"]
