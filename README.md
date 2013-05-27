@@ -29,6 +29,8 @@ ch12------>服务器端JS<br/>
 ###第二部分
 ch13------>Web浏览器中的JavaScript<br/>
 ch14------>Window对象<br/>
+ch15------>脚本化HTML<br/>
+ch16------>脚本化CSS<br/>
 
 摘要
 --------
