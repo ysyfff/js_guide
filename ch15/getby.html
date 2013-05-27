@@ -41,6 +41,16 @@ function textContent(element, value){
     else element.innerText = value;
 }
 
+function upcase(n){
+    if(n.nodeType==3 || n.nodeType==4){
+        n.data = n.data.toUpperCase();
+    }
+    else{
+        for(var i=0; i<n.childNodes.length; i++){
+            upcase(n.childNodes[i]);
+        }
+    }
+}
 /*
 p[lang="fr"]
 *[name="x"]
