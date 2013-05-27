@@ -9,6 +9,16 @@
 <p class="oo"><span>aa</span>oo</p>
 <div id="log"></div>
 <image src=""></image>
+<table>
+    <thead><th>xuhao</th><th>name</th></thead>
+    <tbody>
+        <tr><td>1</td><td>b</td>
+        </tr>
+        <tr><td>2</td><td>a</td>
+        </tr>
+    </tbody>
+    <tfoot></tfoot>
+</table>
 
 
 <script>
@@ -55,7 +65,6 @@ upcase(para);
 
 var pp = para.cloneNode();
 pp.textContent="nonon!!";
-console.log(pp);
 para.appendChild(pp);
 
 function loadasync(url){
@@ -64,6 +73,42 @@ function loadasync(url){
     s.src = url;
     head.appendChild(s);
 }
+
+function sortrows(table, n, compatator){
+    var tbody = table.tBodies[0];
+    var rows = tbody.getElementsByTagName('tr');
+    rows = Array.prototype.slice.call(rows, 0);
+
+    rows.sort(function(row1, row2){
+        var cell1 = row1.getElementsByTagName('td')[n];
+        var cell2 = row2.getElementsByTagName('td')[n];
+        var val1 = cell1.textContent || cell1.innerText;
+        var val2 = cell2.textContent || cell2.innerText;
+        if(compatator) return compatator(val1, val2);
+        if(val1<val2) return -1;
+        else if(val1>val2) return 1;
+        else return 0;
+    })
+
+    for(var i=0; i<rows.length; i++){
+        tbody.appendChild(rows[i]);
+        console.log("bbb");
+    }
+}
+
+function makeSortable(table){
+    var header = table.getElementsByTagName('th');
+    for(var i=0; i<header.length; i++){
+        console.log("hhh");
+        (header[i].onclick = function(n){
+            console.log(n);
+            console.log("aaa");
+            sortrows(table, n);
+        }(i));
+    }
+}
+console.log(document.getElementsByTagName('table'));
+makeSortable(document.getElementsByTagName('table')[0]);
 /*
 p[lang="fr"]
 *[name="x"]
