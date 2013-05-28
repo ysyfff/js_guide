@@ -35,4 +35,11 @@ if(c.addEventListener){
     c.attachEvent("onclick", hander);
 }
 
+function cancelHandler(event){
+    var event = event || window.event;
+
+    if(event.preventDefault) event.preventDefault(); //standard
+    if(event.returnValue) event.returnValue = false;//for ie
+    return false;
+}
 </script>
