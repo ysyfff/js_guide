@@ -31,6 +31,7 @@ ch13------>Web浏览器中的JavaScript<br/>
 ch14------>Window对象<br/>
 ch15------>脚本化HTML<br/>
 ch16------>脚本化CSS<br/>
+ch17------>事件处理<br/>
 
 摘要
 --------
@@ -84,5 +85,17 @@ ch16------>脚本化CSS<br/>
     另外，还有open、close、alert、confirm、prompt、setTimeout、clearTimeout、setInterval、learInterval、
     oveBy、resizeBy、scrollB等等的方法。然而，最重要的属性就是它用了Document对象的document属性，
     这个属性恰恰就是HTML的API，也就是JS和HTML与CSS的接口。
+###ch17:
+    客户端JS程序采用了异步事件驱动编程模型：我们通过注册事件处理程序函数来写程序。之后在注册的事件发生时
+    异步调用这些函数。在这种程序设计风格下，当文档、浏览器、元素或者与之相关的对象发生某些有趣的事情时，
+    Web浏览器就会产生事件(event)。
+    如果程序要响应一个事件，写一个函数，叫做“事件处理程序”、“事件监听器”或“回调”。然后注册这个函数，这样
+    他们就会在事件发生时调用它。
+    用事件进行异步编程会经常涉及嵌套函数，也经常要在函数的函数里定义函数。
+    事件类型：mousemove keydown
+    事件目标：window button
+    事件对象：包含该事件详细信息的对象。
+    事件传播：冒泡、事件捕获。
+    
 
     
