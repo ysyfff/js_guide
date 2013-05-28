@@ -23,6 +23,7 @@ b.addEventListener("click", function(){alert("Thanks again!");}, false);
 var c = document.getElementById("tongyong");
 
 var hander = function(event){
+    event = event || window.event;
     console.log(event);
     console.log(event.type+" "+event.target);
     alert("Thanks!");
