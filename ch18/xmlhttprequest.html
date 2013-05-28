@@ -33,4 +33,8 @@ function jsonP(url, data, callback){
     request.send(JSON.stringify(data));
 
 }
+window.onload = function(){
+    var supportsCORS = (new XMLHttpRequest()).withCredentials !== undefined;
+    //....
+}
 </script>
