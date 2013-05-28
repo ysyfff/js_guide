@@ -1,0 +1,38 @@
+<style>
+h1{
+    font-size: 50px;
+    font-family: sans-serif;
+    font-weight: bold;
+    text-decoration: underline;
+}
+h2{
+    color:blue;
+}
+</style>
+<h1>woqu</h1>
+<h2>hehe</h2>
+<script>
+var ss = document.styleSheets[0];
+console.log(ss);
+var rules =ss.cssRules?ss.cssRules:ss.rules;
+console.log(rules);
+for(var i=0; i<rules.length; i++){
+    var rule = rules[i];
+    if(!rule.selectorText) continue;
+
+    var selector = rule.selectorText;
+    console.log(selector);
+    var ruleText = rule.style.cssText;
+
+    if(selector=="h1"){
+        if(ss.insertRule) ss.insertRule("h2 {" + ruleText +"}", rules.length);
+        else if(ss.addRule) ss.addRule("h2", ruleText, rules.length);
+    }
+    if(rule.style.textDecoration){
+        if(ss.deleteRule) ss.deleteRule(i);
+        else if(ss.removeRule) ss.removeRule(i);
+        i--;
+        console.log(i);
+    }
+}
+</script>
