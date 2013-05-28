@@ -1,6 +1,7 @@
 <div id="shipping">ii</div>
 <button onclick="alert('Thanks!');">Click me</button>`
 <button id="mybutton">Click me</button>
+<button id="tongyong">Tong yong</button>
 <script>
 /*HTML5
 1.强大的播放音频和视频的audio video中有长长的事件列表
@@ -15,8 +16,22 @@ window.onload = function(){
     elt.onclick = function(){ alert("what are you?");}
 }
 var b = document.getElementById("mybutton");
-console.log(b);
+
 b.onclick = function(){alert("Thanks for click me!");}
 b.addEventListener("click", function(){alert("Thanks again!");}, false);
+
+var c = document.getElementById("tongyong");
+
+var hander = function(event){
+    console.log(event);
+    console.log(event.type+" "+event.target);
+    alert("Thanks!");
+};
+
+if(c.addEventListener){
+    c.addEventListener('click', hander, false);
+}else if(c.attachEvent){
+    c.attachEvent("onclick", hander);
+}
 
 </script>
