@@ -81,6 +81,12 @@ function drag(elementToDrag, event){
         else e.cancelBubble = true;
     }
 }
+/*
+省略了以下功能函数。
+1.拖放事件：注意拖放源和拖放目标(DnD API)
+2.文本事件：keypress、textinput
+3.键盘事件：keydown、keyup
+*/
 </script>
 <div class="outer">
     <div class="inner" onmousedown="drag(this.parentNode, event);">
