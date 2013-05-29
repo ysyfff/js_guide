@@ -1,11 +1,17 @@
-<title>nimei</title>
+<!DOCTYPE html>
+<html>
+<head>
+    <title>nimei</title>
 <style>
 p{
     display: inline;
 }
 </style>
+</head>
+<body>
+    <a href="http://www.baidu.com">BaiDu</a>
 <div class="d1">dd
-    <div class="d1_1"></div>
+    <div class="d1_1"><a href="https://github.com/ysyfff">JChen</a></div>
 </div>
 <div class="d2">
 </div>
@@ -59,10 +65,18 @@ $("h2").each(function(){
     var h2 = $(this);
     h2.replaceWith("<h1>"+h2.html()+"</h1>");
 });
+
 $("h1").prepend("$");
 $("h1").append("woqu");
 $("h1").before("<hr/>");
 $("h1").after("<hr/>");
 $("hr").replaceWith("<br/>");
 $("br").replaceWith("<hr/>");
+
+
+$(document.body).append("<div id='linklist'><h1>List of Links</h1></div>");
+$("a").clone().appendTo("#linklist");
+$("#linklist > a").after("<br/>");
 </script>
+</body>
+</html>
