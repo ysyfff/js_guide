@@ -36,6 +36,10 @@ jQuery.ajax({
     dataType:"script",
     success:callback
 });
+$("#loading_animate").bind({
+    ajaxStart: function (){};
+    ajaxStop: function(){};
+})
 </script>
 </body>
 </html>
