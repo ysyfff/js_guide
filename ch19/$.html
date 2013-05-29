@@ -77,6 +77,12 @@ $("br").replaceWith("<hr/>");
 $(document.body).append("<div id='linklist'><h1>List of Links</h1></div>");
 $("a").clone().appendTo("#linklist");
 $("#linklist > a").after("<br/>");
+
+var img = $("<img/>",{
+    src:url,
+    css:{borderWidth:5},
+    click:handeClick
+});
 </script>
 </body>
 </html>
