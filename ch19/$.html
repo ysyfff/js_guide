@@ -1,10 +1,16 @@
 <title>nimei</title>
+<style>
+p{
+    display: inline;
+}
+</style>
 <div class="d1">dd
     <div class="d1_1"></div>
 </div>
 <div class="d2">
 </div>
 <h1 id="aono" class="woqu"><p class="ttt">woqu</p></h1>
+<h1>nimeia</h1>
 <h2 id="hehe">ij</h2>
 <script src="jquery-1.10.0.min.js"></script>
 <script>
@@ -42,10 +48,21 @@ var title1 = $("h1").html();
 console.log(title1);
 var elt = $("#aono");
 var pos = elt.offset();
-pos.top+=100;
+pos.top+=1;
 elt.offset(pos);
 $("h1").offset(function(index, curpos){
     return {left:curpos.left+25*index, top:curpos.top};
 });
 $("div").data("x", 1);
+
+$("h2").each(function(){
+    var h2 = $(this);
+    h2.replaceWith("<h1>"+h2.html()+"</h1>");
+});
+$("h1").prepend("$");
+$("h1").append("woqu");
+$("h1").before("<hr/>");
+$("h1").after("<hr/>");
+$("hr").replaceWith("<br/>");
+$("br").replaceWith("<hr/>");
 </script>
