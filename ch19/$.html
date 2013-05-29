@@ -40,4 +40,12 @@ var title = $("head title").text();
 console.log(title);
 var title1 = $("h1").html();
 console.log(title1);
+var elt = $("#aono");
+var pos = elt.offset();
+pos.top+=100;
+elt.offset(pos);
+$("h1").offset(function(index, curpos){
+    return {left:curpos.left+25*index, top:curpos.top};
+});
+$("div").data("x", 1);
 </script>
