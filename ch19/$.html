@@ -88,6 +88,9 @@ $("h1").wrap(document.createElement("i"));
 $("h1").wrapInner("<i/>");
 $("body>p:first").wrap("<a name='lead'><div class='first'></div></a>");
 $("body>p:not(:first)").wrapAll("<div class='rest'></div>");
+$("h1").click(function(){
+    $(this).css({backgroundColor:"gray"});
+});
 </script>
 </body>
 </html>
