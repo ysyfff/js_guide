@@ -1,15 +1,37 @@
 <script>
+function pt(x){
+    console.log(x);
+}
 var name = localStorage.username;
 name = localStorage['username'];
 console.log(name);
 console.log(!name);
-if(!!name){
+if(!name){
     name = prompt("what is your name?");
     localStorage.username = name;
 }
 for(var name in localStorage){
     var value = localStorage[name];
-    console.log(value);
+ /*   console.log(value);*/
 }
 
+localStorage.setItem("x", 1);
+pt(localStorage.getItem('x'));
+for(var i=0; i<localStorage.length; i++){
+    var name = localStorage.key(i);
+    var value = localStorage.getItem(name);
+    pt(name+"="+value);
+}
+localStorage.removeItem("x");
+for(var i=0; i<localStorage.length; i++){
+    var name = localStorage.key(i);
+    var value = localStorage.getItem(name);
+    pt(name+"="+value);
+}
+localStorage.clear();
+for(var i=0; i<localStorage.length; i++){
+    var name = localStorage.key(i);
+    var value = localStorage.getItem(name);
+    pt(name+"="+value);
+}
 </script>
