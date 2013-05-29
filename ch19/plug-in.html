@@ -1,0 +1,13 @@
+<div id="debug"></div>
+<script src="jquery-1.10.0.min.js"></script>
+<script>
+jQuery.fn.println = function(){
+    var msg = Array.prototype.join.call(arguments, " ");
+    this.each(function(){
+        jQuery(this).append(document.createTextNode(msg) + "<br/>");
+    });
+    return this;
+}
+var x = 10, y=20;
+$("#debug").println("x = ", x, ";y = ", y);
+</script>
