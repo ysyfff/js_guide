@@ -42,6 +42,11 @@ $("a").bind({mouseenter:f, mouseleave:g});
 $("*").unbind();
 $("a").unbind("mouseenter mouseleave");
 $("#my").unbind("click", f);
+
+$("#my_form").submit();
+$("#my_form").trigger("submit");
+$("button").trigger("click!");
+$("#button1").trigger("click", [x, y, z]);
 </script>
 </body>
 </html>
