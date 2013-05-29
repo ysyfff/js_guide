@@ -30,6 +30,9 @@ $("h1").mouseout(function(){
 $("p").bind("click", function(){
     $(this).css({fontSize:"50px"});
 });
+$("a").bind("mouseenter mouseleave", function(){
+    return false;
+});
 </script>
 </body>
 </html>
