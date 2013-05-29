@@ -1,0 +1,15 @@
+<script>
+var name = localStorage.username;
+name = localStorage['username'];
+console.log(name);
+console.log(!name);
+if(!!name){
+    name = prompt("what is your name?");
+    localStorage.username = name;
+}
+for(var name in localStorage){
+    var value = localStorage[name];
+    console.log(value);
+}
+
+</script>
