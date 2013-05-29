@@ -29,6 +29,10 @@ $("img").animate({
     borderRight:"hide",
     paddingLeft:"hide",
     paddingRight:"hide",
+});
+$("img").animate({"width":"+=100"}, {duration:500, easing:"linear"});
+$("img").bind({
+    mouseover:function(){$(this).stop().fadeTo(300, 1.0)};
 })
 </script>
 </body>
