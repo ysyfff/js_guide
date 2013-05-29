@@ -35,6 +35,9 @@ $("a").bind("mouseenter mouseleave", function(){
 });
 $("a").bind("mouseover.myMod", function(){});
 $('a').bind("mouseover.myMod.yourMod",function(){});
+var f = function(){};
+var g = function(){};
+$("a").bind({mouseenter:f, mouseleave:g});
 </script>
 </body>
 </html>
