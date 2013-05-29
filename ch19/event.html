@@ -47,6 +47,11 @@ $("#my_form").submit();
 $("#my_form").trigger("submit");
 $("button").trigger("click!");
 $("#button1").trigger("click", [x, y, z]);
+
+$("#logoff").click(function(){
+    $.event.trigger("logoff");
+    window.location = "logoff.php";
+})
 </script>
 </body>
 </html>
