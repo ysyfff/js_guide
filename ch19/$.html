@@ -78,11 +78,16 @@ $(document.body).append("<div id='linklist'><h1>List of Links</h1></div>");
 $("a").clone().appendTo("#linklist");
 $("#linklist > a").after("<br/>");
 
-var img = $("<img/>",{
+/*var img = $("<img/>",{
     src:url,
     css:{borderWidth:5},
     click:handeClick
-});
+});*/
+
+$("h1").wrap(document.createElement("i"));
+$("h1").wrapInner("<i/>");
+$("body>p:first").wrap("<a name='lead'><div class='first'></div></a>");
+$("body>p:not(:first)").wrapAll("<div class='rest'></div>");
 </script>
 </body>
 </html>
