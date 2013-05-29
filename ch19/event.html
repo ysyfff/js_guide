@@ -51,7 +51,9 @@ $("#button1").trigger("click", [x, y, z]);
 $("#logoff").click(function(){
     $.event.trigger("logoff");
     window.location = "logoff.php";
-})
+});
+
+$(document).delegate("a", "mouseover", f);
 </script>
 </body>
 </html>
