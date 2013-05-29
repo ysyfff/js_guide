@@ -16,4 +16,8 @@ console.log(bss.selector);
 console.log(bss.context);
 console.log(bss.jquery);
 console.log($(":header").map(function(){return this.id;}).toArray().sort());
+$('div').each(function(){
+    if($(this).is(":hidden")) return;
+    //......
+});
 </script>
