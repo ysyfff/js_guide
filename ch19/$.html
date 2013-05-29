@@ -3,7 +3,7 @@
 </div>
 <div class="d2">
 </div>
-<h1 id="aono">woqu</h1>
+<h1 id="aono" class="woqu"><p>woqu</p></h1>
 <h2 id="hehe">ij</h2>
 <script src="jquery-1.10.0.min.js"></script>
 <script>
@@ -23,4 +23,13 @@ $('div').each(function(){
 $('form').attr("action");
 $("#icon").attr("src", "icon.gif");
 $("h1").css({color:"blue"});
+$("h1").addClass("hilite");
+$("h1 p").addClass("hilite");
+$("section").addClass(function(n){
+    return 'section'+n;
+});
+$("p").removeClass("hilite");
+$("tr:odd").toggleClass("oddrow");
+$('#lead').hasClass("first");
+$("#lead").is(".first");
 </script>
