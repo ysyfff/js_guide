@@ -9,6 +9,7 @@ p{
 </style>
 </head>
 <body>
+    <img style="width:100px; height:100px; background-color:blue;"></img><br/>
     <a href="http://www.baidu.com">BaiDu</a>
 <div class="d1">dd
     <div class="d1_1"><a href="https://github.com/ysyfff">JChen</a></div>
@@ -22,6 +23,13 @@ p{
 <script>
 
 $("p").fadeOut("slow").fadeIn("slow").fadeOut("slow").fadeIn("slow");
+$("img").animate({
+    width:"hide",
+    borderLeft:"hide",
+    borderRight:"hide",
+    paddingLeft:"hide",
+    paddingRight:"hide",
+})
 </script>
 </body>
 </html>
