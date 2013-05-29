@@ -54,6 +54,8 @@ $("#logoff").click(function(){
 });
 
 $(document).delegate("a", "mouseover", f);
+$("a").live("mouseover", f);
+$("a", $(".dynamic")).live("mouseover", f);
 </script>
 </body>
 </html>
