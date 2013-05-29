@@ -23,17 +23,18 @@ p{
 <script>
 
 $("p").fadeOut("slow").fadeIn("slow").fadeOut("slow").fadeIn("slow");
-$("img").animate({
+/*$("img").animate({
     width:"hide",
     borderLeft:"hide",
     borderRight:"hide",
     paddingLeft:"hide",
     paddingRight:"hide",
-});
+});*/
 $("img").animate({"width":"+=100"}, {duration:500, easing:"linear"});
 $("img").bind({
-    mouseover:function(){$(this).stop().fadeTo(300, 1.0)};
-})
+    mouseover:function(){$(this).stop().fadeTo(300, 1.0);}
+});
+$("img").fadeTo(100, 0.5).delay(200).slideUp();
 </script>
 </body>
 </html>
