@@ -1,0 +1,31 @@
+<img src="1.jpg" data-rollover="2.jpg" style="width:600px; height:600px;">
+
+<script>
+onLoad(function(){
+    for(var i=0; i<document.images.length; i++){
+        var img = document.images[i];
+        var roll = img.getAttribute("data-rollover");
+        if(!roll) continue;
+
+        (new Image()).scr = roll;
+
+        img.setAttribute("data-rollout", img.src);
+
+        img.onmouseover = function(){
+            this.src = this.getAttribute("data-rollover");
+        };
+        img.onmouseout = function(){
+            this.src = this.getAttribute("data-rollout");
+        }
+    }
+})
+function onLoad(f){
+    if(onLoad.loaded)
+        window.setTimeout(f, 0);
+    else if(window.addEventListener){
+        window.addEventListener("load", f, false);
+    }else if(window.attachEvent){
+        window.attachEvent("onload", f);
+    }
+}
+</script>
