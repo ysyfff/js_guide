@@ -4,7 +4,8 @@
 </head>
 <body>
     This is a red square:<canvas id="square" width="10px" height="10px"></canvas><hr/>
-    This is a red square:<canvas id="circle" width="10px" height="10px"></canvas>
+    This is a red square:<canvas id="circle" width="10px" height="10px"></canvas><hr/>
+    <canvas id="poly" width="1000px" height="100px"></canvas><hr/>
     <script type="text/javascript">
     var canvas = document.getElementById("square");
     var c = canvas.getContext("2d");
@@ -17,6 +18,32 @@
     c.arc(5,5,5,0,2*Math.PI, true);
     c.fillStyle="#00f";
     c.fill();
+
+    function polygon(c, n, x, y, r, angle, counterclockwise) {
+        angle = angle||0;
+        counterclockwise = counterclockwise ||false;
+        c.moveTo(x + r*Math.sin(angle), y-r*Math.cos(angle));
+        var delta = 2*Math.PI/n;
+        for(var i=1; i<n; i++){
+            angle += counterclockwise?-delta:delta;
+            c.lineTo(x + r*Math.sin(angle), y-r*Math.cos(angle));
+        }
+        c.closePath();
+    }
+    var canvas = document.getElementById("poly");
+    var c = canvas.getContext("2d");
+    c.beginPath();
+    polygon(c, 3, 50, 70, 50);
+    polygon(c, 4, 150, 60, 50, Math.PI/4);
+    polygon(c, 5, 255, 55, 50);
+
+    c.fillStyle = "#ccc";
+    c.strokeStyle = "#008";
+    c.lineWidth = 5;
+
+    c.fill();
+    c.stroke();
+
     </script>
 </body>
 </html>
