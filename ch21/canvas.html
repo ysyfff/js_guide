@@ -7,6 +7,7 @@
     This is a red square:<canvas id="circle" width="10px" height="10px"></canvas><hr/>
     <canvas id="poly" width="1000px" height="100px"></canvas><hr/>
     <canvas id="snow" width="1000px" height="150px"></canvas><hr/>
+    <canvas id="shadow" width="1000px" height="500px"></canvas><hr/>
     <script type="text/javascript">
     var canvas = document.getElementById("square");
     var c = canvas.getContext("2d");
@@ -83,6 +84,23 @@
     snowflake(c, 3, 425, 115, 125);
     snowflake(c, 4, 565, 115, 125);
     c.stroke();
+
+    var canvas = document.getElementById("shadow");
+    var c = canvas.getContext("2d");
+    c.shadowColor="rgba(100,100,100, .4)";
+    c.shadowOffsetX=c.shadowOffsetY=3;
+    c.shadowBlur = 5;
+
+    c.lineWidth = 10;
+    c.strokeStyle = "blue";
+    c.strokeRect(100,100,300,200);
+    c.font = "Bold 36pt helvetica";
+    c.fillText("Hello Word", 115, 225);
+
+    c.shadowOffsetX=c.shadowOffsetY=20;
+    c.shadowBlur=10;
+    c.fillStyle="red";
+    c.fillRect(50,25,200,65);
     </script>
 </body>
 </html>
