@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <style type="text/css">
+    .sparkline{background-color: #ddd; color:red;}
+    </style>
 </head>
 <body>
     This is a red square:<canvas id="square" width="10px" height="10px"></canvas><hr/>
@@ -8,6 +11,7 @@
     <canvas id="poly" width="1000px" height="100px"></canvas><hr/>
     <canvas id="snow" width="1000px" height="150px"></canvas><hr/>
     <canvas id="shadow" width="1000px" height="500px"></canvas><hr/>
+    <span class="sparkline">3 5 7 6 6 9 11 15</span><hr/>
     <script type="text/javascript">
     var canvas = document.getElementById("square");
     var c = canvas.getContext("2d");
@@ -101,6 +105,64 @@
     c.shadowBlur=10;
     c.fillStyle="red";
     c.fillRect(50,25,200,65);
+    function onLoad(f){
+    if(onLoad.loaded)
+        window.setTimeout(f, 0);
+    else if(window.addEventListener){
+        window.addEventListener("load", f, false);
+    }else if(window.attachEvent){
+        window.attachEvent("onload", f);
+    }
+}
+    onLoad(function(){
+        var elts = document.getElementsByClassName("sparkline");
+        main: for(var e=0; e<elts.length; e++){
+            var elt = elts[e];
+            var content = elt.textContent || elt.innerText;
+            console.log(content);
+            var content = content.replace(/^\s+|\s+$/g, "");
+            console.log(content);
+            var text = content.replace(/#.*$/gm, "");
+            console.log(text);
+            text = text.replace(/[\n\r\t\v\f]/g, " ");
+            console.log(text);
+            var data = text.split(/\s+|\s*,\s*/);
+            console.log(data);
+            for(var i=0; i<data.length; i++){
+                data[i] = Number(data[i]);
+                if(isNaN(data[i])) continue main;
+            }
+            var style=getComputedStyle(elt, null);
+            console.log(style);
+            var color = style.color;
+            console.log(color);
+            var height = parseInt(elt.getAttribute("data-height"))||
+                parseInt(style.fontSize) || 20;
+            var width = parseInt(elt.getAttribute("data-width"))||
+                data.length*(parseInt(elt.getAttribute("data-dx")) || height/6);
+            var ymin =Math.min.apply(Math, data) || parseInt(elt.getAttribute("data-ymin")) ;
+            var ymax = Math.max.apply(Math, data) || parseInt(elt.getAttribute("data-ymax"));
+            console.log(height, width, ymin, ymax);
+
+            if(ymin >= ymax) ymax = ymin+1;
+
+            var canvas = document.createElement("canvas");
+            canvas.width = width;
+            canvas.height = height;
+            canvas.title = content;
+            elt.innerHTML = "";
+            elt.appendChild(canvas);
+
+            var c = canvas.getContext("2d");
+            for(var i=0; i<data.length; i++){
+                var x = width*i/data.length;
+                var y = (ymax-data[i])*height/(ymax-ymin);
+                c.lineTo(x, y);
+            }
+            c.strokeStyle = color;
+            c.stroke();
+        }
+    });
     </script>
 </body>
 </html>
