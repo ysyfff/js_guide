@@ -1,0 +1,14 @@
+<script type="text/javascript">
+function GetArgs(start_time, end_time){
+    this.start_time = start_time;
+    this.end_time = end_time;
+}
+GetArgs.prototype.cal = function(){
+    console.log(this.end_time-this.start_time);
+}
+var a =new GetArgs(3,4);
+a.cal();
+var b = Object.create(GetArgs.prototype);
+b.cal();
+console.log(a, b);
+</script>
