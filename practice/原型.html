@@ -1,14 +1,23 @@
 <script type="text/javascript">
-function GetArgs(start_time, end_time){
+function TimerArgs(start_time, end_time){
     this.start_time = start_time;
     this.end_time = end_time;
 }
-GetArgs.prototype.cal = function(){
+TimerArgs.prototype.localCal = function(){
     console.log(this.end_time-this.start_time);
 }
-var a =new GetArgs(3,4);
-a.cal();
-var b = Object.create(GetArgs.prototype);
+TimerArgs.prototype.remoteSync = function(){
+    this.localCal(this.end_time-this.start_time);
+    console.log(this.end_time+this.start_time);
+} 
+var a =new TimerArgs(3,4);
+/*function Roll(){
+    a.cal();
+    setTimeout("Roll()", 1000);    
+}
+Roll();*/
+a.remoteSync();
+/*var b = Object.create(GetArgs.prototype);
 b.cal();
-console.log(a, b);
+console.log(a, b);*/
 </script>
