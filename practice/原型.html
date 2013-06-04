@@ -10,12 +10,12 @@ TimerArgs.prototype.remoteSync = function(){
     this.localCal(this.end_time-this.start_time);
     console.log(this.end_time+this.start_time);
 }
-function Timer(){
-    var a =new TimerArgs(3,4);    
+function Timer(start_time, end_time){
+    var a =new TimerArgs(start_time, end_time);    
     a.remoteSync();
     console.log("haha");
 }
-Timer();
+Timer(3,4);
 /*function Roll(){
     a.cal();
     setTimeout("Roll()", 1000);    
