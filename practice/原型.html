@@ -9,14 +9,19 @@ TimerArgs.prototype.localCal = function(){
 TimerArgs.prototype.remoteSync = function(){
     this.localCal(this.end_time-this.start_time);
     console.log(this.end_time+this.start_time);
-} 
-var a =new TimerArgs(3,4);
+}
+function Timer(){
+    var a =new TimerArgs(3,4);    
+    a.remoteSync();
+    console.log("haha");
+}
+Timer();
 /*function Roll(){
     a.cal();
     setTimeout("Roll()", 1000);    
 }
 Roll();*/
-a.remoteSync();
+
 /*var b = Object.create(GetArgs.prototype);
 b.cal();
 console.log(a, b);*/
