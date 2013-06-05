@@ -4,15 +4,21 @@ function TimerArgs(start_time, end_time){
     this.end_time = end_time;
 }
 TimerArgs.prototype.localCal = function(){
+    console.log(this.yyy);
     console.log(this.end_time-this.start_time);
 }
 TimerArgs.prototype.remoteSync = function(){
+    this.yyy =200;
     this.localCal(this.end_time-this.start_time);
     console.log(this.end_time+this.start_time);
 }
 function Timer(start_time, end_time){
-    var a =new TimerArgs(start_time, end_time);    
+    var a =new TimerArgs(start_time, end_time);  
+    console.log(a);  
     a.remoteSync();
+    console.log(a);
+    a.localCal();
+    console.log(a);
     console.log("haha");
 }
 Timer(3,4);
