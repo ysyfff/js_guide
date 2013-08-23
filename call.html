@@ -1,0 +1,35 @@
+<input type="text" id="myText" value="Input text"></input>
+<script>
+    /*call*/
+    function Obj(){
+         this.value="Obj!"
+    };
+
+    var value="Global!";
+
+    function Fun1(){
+        alert(this.value);
+    }
+
+    window.Fun1();
+
+    Fun1.call(window);
+    Fun1.call(document.getElementById('myText'));
+    Fun1.call(new Obj());
+
+    /*call and apply*/
+    var func=new function(){this.a="func"}
+    var myfunc=function(x){
+        var a="myfunc";
+        alert(this.a);
+        alert(x);
+    }
+    myfunc.call(func,"var");
+
+
+    func.call(func1, var1, var2, var3)
+    func.apply(func1, [var1, var2, var3])
+</script>
+<script>
+   
+</script>
